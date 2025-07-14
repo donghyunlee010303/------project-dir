@@ -1,9 +1,12 @@
-# %%
-!pip install python-dotenv
+# (If needed, install python-dotenv manually in your environment before running this script)
 
-# %%
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "python-dotenv"])
+    from dotenv import load_dotenv
 import requests
 import re
 from urllib.parse import urlparse, parse_qs
@@ -149,7 +152,7 @@ get_url_coords("https://naver.me/xGI191mm")
 
 # %%
 # 기존 markers.json 경로 설정
-json_path = os.path.join(os.path.dirname('/Users/donghyunlee/Desktop/대동여지도 project dir/'), "markers.json")
+json_path = os.path.join(os.path.dirname(__file__), "markers.json")
 
 # 기존 데이터 로딩 or 데이터가 없는 경우 초기화
 if os.path.exists(json_path):
