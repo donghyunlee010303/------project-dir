@@ -24,4 +24,4 @@ jobs:
 
       - name: Run script
         run: |
-          python your_script.py
+          python map_marker.py
