@@ -9,6 +9,14 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
+    env:  # ← 여기서 secrets 값을 환경변수로 주입
+      NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+      DATABASE_ID: ${{ secrets.DATABASE_ID }}
+      KAKAOMAP_JS_KEY: ${{ secrets.KAKAOMAP_JS_KEY }}
+      KAKAOMAP_REST_API_KEY: ${{ secrets.KAKAOMAP_REST_API_KEY }}
+      NAVERMAP_CLIENT_ID: ${{ secrets.NAVERMAP_CLIENT_ID }}
+      NAVERMAP_CLIENT_SECRET: ${{ secrets.NAVERMAP_CLIENT_SECRET }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
