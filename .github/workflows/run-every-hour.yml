@@ -43,4 +43,10 @@ jobs:
           git remote set-url origin https://x-access-token:${PAT}@github.com/${{ github.repository }}
           git add markers.json
           git commit -m "Update markers.json [auto]" || echo "No changes to commit"
-          git push
+          git push origin HEAD
+
+      - name: Check current branch and remote
+        run: |
+          git branch
+          git remote -v
+          git status
