@@ -142,7 +142,7 @@ def get_url_coords(link: str):
         return None
 
 # %%
-get_url_coords("https://naver.me/xGI191mm")
+# get_url_coords("https://naver.me/xGI191mm")
 
 # %% [markdown]
 # # 카카오맵 js에 위경도를 이용하여 마커로 표시하는 코드
